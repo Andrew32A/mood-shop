@@ -4,10 +4,10 @@ const itemsContainer = document.querySelector('#items')
 // length of data determines how many times loop is ran
 for (let i = 0; i < data.length; i += 1) {
 	// create new div element and give it class name
-	const newDiv = document.createElement('div');
+	const newDiv = document.createElement('div')
 	newDiv.className = 'item'
 	// create an image element
-	const img = document.createElement('img');
+	const img = document.createElement('img')
 	// cycles through each image in the list using 'i' and the for loop
 	img.src = data[i].image
 	img.width = 300
