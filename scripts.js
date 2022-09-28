@@ -47,7 +47,7 @@ for (let i = 0; i < data.length; i += 1) {
 // ---------------------------------------------------
 // adds items to cart
 function addItem(name, price) {
-    for (let i = 0; 1 < cart.length; i += 1) {
+    for (let i = 0; i < cart.length; i += 1) {
         if (cart[i].name === name) {
             cart[i].qty += 1
             return
@@ -110,6 +110,18 @@ function removeItem(name, qty = 0) {
 addItem('Apple', 0.99)
 addItem('Orange', 1.29)
 addItem('Orange', 1.29)
+addItem('test', 0.69)
+
+addItem('Apple', 0.99)
+addItem('Orange', 1.29)
+addItem('Orange', 1.29)
+addItem('test', 0.69)
+
+addItem('Apple', 0.99)
+addItem('Orange', 1.29)
+addItem('Orange', 1.29)
+addItem('test', 0.69)
+
 
 removeItem('Orange', 1)
 
