@@ -1,5 +1,8 @@
 import data from './data.js'
+
+// defining variables
 const itemsContainer = document.querySelector('#items')
+const cart = [] // array to hold cart items
 
 // length of data determines how many times loop is ran
 for (let i = 0; i < data.length; i += 1) {
@@ -38,3 +41,19 @@ for (let i = 0; i < data.length; i += 1) {
 	button.innerHTML = "Add to Cart"
 	newDiv.appendChild(button)
 }
+
+
+
+// add items function
+function addItem(name, price) {
+    const item = {name: name, price: price, qty: 1}
+    cart.push(name)
+}
+
+
+// show items function
+function showItems() {
+    console.log(cart[0])
+}
+
+showItems()
