@@ -4,7 +4,7 @@ import data from './data.js'
 const itemsContainer = document.querySelector('#items')
 const cart = [] // array to hold cart items
 
-
+// ---------------------------------------------------
 // length of data determines how many times loop is ran
 for (let i = 0; i < data.length; i += 1) {
 	// create new div element and give it class name
@@ -44,7 +44,7 @@ for (let i = 0; i < data.length; i += 1) {
 }
 
 
-
+// ---------------------------------------------------
 // adds items to cart
 function addItem(name, price) {
     for (let i = 0; 1 < cart.length; i += 1) {
@@ -58,7 +58,7 @@ function addItem(name, price) {
     cart.push(item)
 }
 
-
+// ---------------------------------------------------
 // shows items in cart
 function showItems() {
     console.log(`You have ${getQty()} items in your cart`) // could also make a 'const qty = getQty()' line and put qty in the string
@@ -70,6 +70,7 @@ function showItems() {
     console.log(`Your total in cart is: $${getTotal()}`)
 }
 
+// ---------------------------------------------------
 // gets quantity of total cart items
 function getQty () {
     let qty = 0
@@ -79,6 +80,7 @@ function getQty () {
     return qty
 }
 
+// ---------------------------------------------------
 // gets total price of cart items
 function getTotal () {
     let total = 0
@@ -88,12 +90,32 @@ function getTotal () {
     return total.toFixed(2) // the '2' rounds to 2 decimals, without it the float would be extremely long
 }
 
-addItem("apple", 0.99) 
-addItem("banana", 2.99)
-addItem("banana", 2.99)
-addItem("banana", 2.99)
-addItem("banana", 2.99)
-addItem("apple", 0.99) 
+// ---------------------------------------------------
+// removes items from cart
+function removeItem(name, qty = 0) {
+    for (let i = 0; i < cart.length; i += 1) {
+        if (cart[i].name === name) {
+            if (qty > 0) {
+                cart[i].qty -= qty
+            }
+            if (cart[i].qty < 1 || qty === 0) {
+                cart.splice(i, 1)
+            }
+            return
+        }
+    }
+}
+
+
+addItem('Apple', 0.99)
+addItem('Orange', 1.29)
+addItem('Orange', 1.29)
+
+removeItem('Orange', 1)
+
+
+
+
 
 
 showItems()
